@@ -520,16 +520,32 @@
         title: {
             text: '雨量',
             style: {
-                color: Highcharts.getOptions().colors[0]
+                color: Highcharts.getOptions().colors[2]
             }
         },
         labels: {
             format: '{value} mm',
             style: {
-                color: Highcharts.getOptions().colors[0]
+                color: Highcharts.getOptions().colors[2]
             }
         },
         opposite: true
+			}, { // Tertiary yAxis
+	        gridLineWidth: 0,
+	        title: {
+	            text: '冷氣',
+	            style: {
+	                color: Highcharts.getOptions().colors[4]
+	            }
+	        },
+	        labels: {
+	            format: '{value} 台',
+	            style: {
+	                color: Highcharts.getOptions().colors[4]
+	            }
+	        },
+	        opposite: true
+	    //}],
     }],
     labels: {
         items: [{
@@ -544,19 +560,25 @@
     series: [{
         type: 'column',
         name: '冷氣',
-        data: [12, 15, 18, 21, 26, 33, 36, 33, 34, 22, 10, 8]
+				yAxis: 2,
+				data: [5568, 3907, 7284, 8152, 7154, 5919, 5765, 2732, 2051, 1948, 1818, 2314],
+				tooltip: {
+            valueSuffix: ' 台'
+        }
+        //data: [12, 15, 18, 21, 26, 33, 36, 33, 34, 22, 10, 8]
     }, {
-        type: 'column',
-        name: '除濕機',
-        data: [16, 10, 25, 36, 11, 13, 7, 12, 16, 26, 33, 35]
-    }, {
-        type: 'column',
-        name: '電風扇',
-        data: [8, 15, 21, 27, 32, 36, 36, 31, 28, 16, 12, 3]
-    }, {
+    //     type: 'column',
+    //     name: '除濕機',
+    //     data: [16, 10, 25, 36, 11, 13, 7, 12, 16, 26, 33, 35]
+    // }, {
+    //     type: 'column',
+    //     name: '電風扇',
+    //     data: [8, 15, 21, 27, 32, 36, 36, 31, 28, 16, 12, 3]
+    // }, {
         type: 'spline',
         name: '溫度',
-        data: [31.3, 31.9, 32.8, 32.5, 31.9, 31.9, 31.8, 31.9, 31.2, 31.3, 31.2, 31.2],
+        //data: [31.3, 31.9, 32.8, 32.5, 31.9, 31.9, 31.8, 31.9, 31.2, 31.3, 31.2, 31.2],
+				data: [25.0983, 25.3378, 25.9997, 26.4753, 26.7869, 26.6096, 26.4324, 26.0342, 26.1329, 26.1855, 25.7917, 25.9786],
 				tooltip: {
             valueSuffix: '°C'
         },
@@ -569,7 +591,8 @@
         name: '雨量',
         type: 'spline',
         yAxis: 1,
-        data: [158, 149, 199, 288, 165, 140, 140, 149, 172, 281, 281, 236],
+        //data: [158, 149, 199, 288, 165, 140, 140, 149, 172, 281, 281, 236],
+				data: [327.939, 148.93, 118.765, 231.605, 202.378, 210.088, 135.85, 232.627, 155.673, 218.301, 366.935, 306.581],
         tooltip: {
             valueSuffix: ' mm'
 					},
