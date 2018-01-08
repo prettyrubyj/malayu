@@ -118,7 +118,8 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<div id="container" style="min-width: 310px; height: 50vh; margin: 0 auto"></div>
+					<div id="container" style="min-width: 310px; height: 40vh; margin: 0 auto"></div>
+					<div id="container_2017" style="min-width: 310px; height: 40vh; margin:  auto"></div>
 					<!-- OVERVIEW -->
 					<!-- <div class="panel panel-headline">
 						<div class="panel-heading">
@@ -498,48 +499,49 @@
 	$(function() {
 		Highcharts.chart('container', {
     title: {
-        text: '溫度濕度與銷售量分析'
+        text: '2016溫度濕度與銷售量分析'
     },
     xAxis: {
         categories: ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May','Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct','Nov.', 'Dec.']
     },
 		yAxis: [{ // Primary yAxis
-        labels: {
-            format: '{value}°C',
-            style: {
-                color: Highcharts.getOptions().colors[1]
-            }
-        },
-        title: {
-            text: 'Temperature',
-            style: {
-                color: Highcharts.getOptions().colors[1]
-            }
-        }
+				gridLineWidth: 0,
+				title: {
+						text: '冷氣',
+						style: {
+								color: Highcharts.getOptions().colors[1]
+						}
+				},
+				labels: {
+						format: '{value} 台',
+						style: {
+								color: Highcharts.getOptions().colors[1]
+						}
+				}
     }, { // Secondary yAxis
         title: {
             text: '雨量',
             style: {
-                color: Highcharts.getOptions().colors[2]
+                color: Highcharts.getOptions().colors[5]
             }
         },
         labels: {
             format: '{value} mm',
             style: {
-                color: Highcharts.getOptions().colors[2]
+                color: Highcharts.getOptions().colors[5]
             }
         },
         opposite: true
 			}, { // Tertiary yAxis
 	        gridLineWidth: 0,
 	        title: {
-	            text: '冷氣',
+	            text: '溫度',
 	            style: {
 	                color: Highcharts.getOptions().colors[4]
 	            }
 	        },
 	        labels: {
-	            format: '{value} 台',
+	            format: '{value} °C',
 	            style: {
 	                color: Highcharts.getOptions().colors[4]
 	            }
@@ -559,26 +561,42 @@
     },
     series: [{
         type: 'column',
-        name: '冷氣',
-				yAxis: 2,
-				data: [5568, 3907, 7284, 8152, 7154, 5919, 5765, 2732, 2051, 1948, 1818, 2314],
+        name: 'hitachi',
+				//yAxis: 2,
+				data: [511, 527, 970, 697, 485, 364, 351, 287, 229, 243, 172, 138],
 				tooltip: {
             valueSuffix: ' 台'
         }
-        //data: [12, 15, 18, 21, 26, 33, 36, 33, 34, 22, 10, 8]
     }, {
-    //     type: 'column',
-    //     name: '除濕機',
-    //     data: [16, 10, 25, 36, 11, 13, 7, 12, 16, 26, 33, 35]
-    // }, {
-    //     type: 'column',
-    //     name: '電風扇',
-    //     data: [8, 15, 21, 27, 32, 36, 36, 31, 28, 16, 12, 3]
-    // }, {
+		    type: 'column',
+				name: 'panasonic',
+				//yAxis: 2,
+				data: [1868, 672, 1346, 1948, 1383, 1220, 1388, 1257, 959, 955, 689, 1268],
+				tooltip: {
+						valueSuffix: ' 台'
+				}
+    }, {
+			type: 'column',
+			name: 'samsung',
+			//yAxis: 2,
+			data: [379, 255, 1173, 1246, 1020, 446, 346, 219, 184, 146, 242, 324],
+			tooltip: {
+					valueSuffix: ' 台'
+			}
+		}, {
+			type: 'column',
+			name: 'sharp',
+			//yAxis: 2,
+			data: [641, 666, 892, 929, 448, 279, 257, 161, 157, 151, 205, 245],
+			tooltip: {
+					valueSuffix: ' 台'
+			}
+    }, {
         type: 'spline',
         name: '溫度',
+				yAxis: 2,
         //data: [31.3, 31.9, 32.8, 32.5, 31.9, 31.9, 31.8, 31.9, 31.2, 31.3, 31.2, 31.2],
-				data: [25.0983, 25.3378, 25.9997, 26.4753, 26.7869, 26.6096, 26.4324, 26.0342, 26.1329, 26.1855, 25.7917, 25.9786],
+				data: [27.13, 26.97, 27.40, 28.00, 28.00, 27.62, 27.30, 28.47, 27.24, 27.38, 26.88, 26.93],
 				tooltip: {
             valueSuffix: '°C'
         },
@@ -613,32 +631,145 @@
 			// 				lineColor: Highcharts.getOptions().colors[4],
 			// 				fillColor: 'white'
       // }
-
-    // }, {
-    //     type: 'pie',
-    //     name: 'Total consumption',
-    //     data: [{
-    //         name: 'Jane',
-    //         y: 13,
-    //         color: Highcharts.getOptions().colors[0] // Jane's color
-    //     }, {
-    //         name: 'John',
-    //         y: 23,
-    //         color: Highcharts.getOptions().colors[1] // John's color
-    //     }, {
-    //         name: 'Joe',
-    //         y: 19,
-    //         color: Highcharts.getOptions().colors[2] // Joe's color
-    //     }],
-    //     center: [100, 80],
-    //     size: 100,
-    //     showInLegend: false,
-    //     dataLabels: {
-    //         enabled: false
-    //     }
     }]
 });
 
+Highcharts.chart('container_2017', {
+title: {
+		text: '2017溫度濕度與銷售量分析'
+},
+xAxis: {
+		categories: ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May','Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct','Nov.', 'Dec.']
+},
+yAxis: [{ // Primary yAxis
+		gridLineWidth: 0,
+		title: {
+				text: '冷氣',
+				style: {
+						color: Highcharts.getOptions().colors[1]
+				}
+		},
+		labels: {
+				format: '{value} 台',
+				style: {
+						color: Highcharts.getOptions().colors[1]
+				}
+		}
+}, { // Secondary yAxis
+		title: {
+				text: '雨量',
+				style: {
+						color: Highcharts.getOptions().colors[5]
+				}
+		},
+		labels: {
+				format: '{value} mm',
+				style: {
+						color: Highcharts.getOptions().colors[5]
+				}
+		},
+		opposite: true
+	}, { // Tertiary yAxis
+			gridLineWidth: 0,
+			title: {
+					text: '溫度',
+					style: {
+							color: Highcharts.getOptions().colors[4]
+					}
+			},
+			labels: {
+					format: '{value} °C',
+					style: {
+							color: Highcharts.getOptions().colors[4]
+					}
+			},
+			opposite: true
+	//}],
+}],
+labels: {
+		items: [{
+				//html: 'Total fruit consumption',
+				style: {
+						left: '50px',
+						top: '18px',
+						color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+				}
+		}]
+},
+series: [{
+		type: 'column',
+		name: 'hitachi',
+		//yAxis: 2,
+		data: [98, 76, 69, 262, 138, 123, 97],
+		tooltip: {
+				valueSuffix: ' 台'
+		}
+}, {
+		type: 'column',
+		name: 'panasonic',
+		//yAxis: 2,
+		data: [1030, 861, 1424, 992, 1641, 1780, 1434],
+		tooltip: {
+				valueSuffix: ' 台'
+		}
+}, {
+	type: 'column',
+	name: 'samsung',
+	//yAxis: 2,
+	data: [129, 109, 294, 330, 315, 166, 100],
+	tooltip: {
+			valueSuffix: ' 台'
+	}
+}, {
+	type: 'column',
+	name: 'sharp',
+	//yAxis: 2,
+	data: [225, 177, 113, 332, 339, 387, 443],
+	tooltip: {
+			valueSuffix: ' 台'
+	}
+}, {
+		type: 'spline',
+		name: '溫度',
+		yAxis: 2,
+		//data: [31.3, 31.9, 32.8, 32.5, 31.9, 31.9, 31.8, 31.9, 31.2, 31.3, 31.2, 31.2],
+		data: [26.85, 26.30, 26.86, 27.05, 27.88, 27.27, 27.82, 26.92, 26.66, 26.99, 26.86, 26.78],
+		tooltip: {
+				valueSuffix: '°C'
+		},
+		marker: {
+				lineWidth: 2,
+				lineColor: Highcharts.getOptions().colors[3],
+				fillColor: 'white'
+			}
+}, {
+		name: '雨量',
+		type: 'spline',
+		yAxis: 1,
+		//data: [158, 149, 199, 288, 165, 140, 140, 149, 172, 281, 281, 236],
+		data: [327.939, 148.93, 118.765, 231.605, 202.378, 210.088, 135.85, 232.627, 155.673, 218.301, 366.935, 306.581],
+		tooltip: {
+				valueSuffix: ' mm'
+			},
+				marker: {
+						lineWidth: 2,
+						lineColor: Highcharts.getOptions().colors[4],
+						fillColor: 'white'
+		}
+	// }, {
+	// 		type: 'spline',
+	// 		name: '濕度',
+	// 		data: [89.5, 83.6, 85.5, 77.8, 76.6, 72.3, 70.0, 67.1, 73.8, 79.3, 83.4, 86.4],
+	// 		tooltip: {
+	//       valueSuffix: 'mm'
+	//   },
+	// 		marker: {
+	// 				lineWidth: 2,
+	// 				lineColor: Highcharts.getOptions().colors[4],
+	// 				fillColor: 'white'
+	// }
+}]
+});
 
 
 		// var data, options;
