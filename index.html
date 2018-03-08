@@ -27,16 +27,16 @@
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
 
+
 </head>
 <body>
 
-
         <!-- Left Panel -->
-
-    <aside id="left-panel" class="left-panel">
+        <!-- <div  id="sidebar-left"></div> -->
+     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
-
             <div class="navbar-header">
+              <div  id="sidebar-left"></div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
@@ -45,20 +45,21 @@
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
+              <!-- <div  id="sidebar-left"></div> -->
                 <ul class="nav navbar-nav">
                     <li class="active">
                         <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Overview </a>
                     </li>
-                    <!-- <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Visit Traffic </a>
-                    </li> -->
                     <li>
-                        <a href="persona-revenue.html"> <i class="menu-icon ti-email"></i>Persona & Revenue </a>
-                    </li>
-                    <!-- <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Retail Traffic </a>
+                        <a href="visit-traffic.html"> <i class="menu-icon ti-email"></i>Visit Traffic </a>
                     </li>
                     <li>
+                        <a href="persona-revenue.html"> <i class="menu-icon ti-bar-chart"></i>Persona & Revenue </a>
+                    </li>
+                     <li>
+                        <a href="retail-traffic.html"> <i class="menu-icon ti-map-alt"></i>Retail Traffic </a>
+                    </li>
+                    <!--<li>
                         <a href="widgets.html"> <i class="menu-icon ti-email"></i>User Profile </a>
                     </li>
                     <li>
@@ -134,9 +135,11 @@
                         </ul>
                     </li> -->
                 </ul>
-            </div><!-- /.navbar-collapse -->
+            </div>
         </nav>
-    </aside><!-- /#left-panel -->
+    </aside>
+
+    <!-- /#left-panel -->
 
     <!-- Left Panel -->
 
@@ -297,6 +300,9 @@
                <div class="card text-white bg-flat-color-1">
                    <div class="card-body pb-0">
                        <div class="dropdown float-right">
+                         <h4 class="mb-0">
+                             <span  id='trafficPersent'></span>
+                         </h4>
                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown">
                                <i class="fa fa-cog"></i>
                            </button>
@@ -309,7 +315,8 @@
                            </div>
                        </div>
                        <h4 class="mb-0">
-                           <span class="count">10468</span>
+                           <span class="count" id='trafficCount'></span>
+                           <!-- <span  id='trafficPersent'></span> -->
                        </h4>
                        <p class="text-light">Traffic</p>
 
@@ -324,6 +331,9 @@
                 <div class="card text-white bg-flat-color-2">
                     <div class="card-body pb-0">
                         <div class="dropdown float-right">
+                          <h4 class="mb-0">
+                              <span  id='salesPersent'></span>
+                          </h4>
                             <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown">
                                 <i class="fa fa-cog"></i>
                             </button>
@@ -336,7 +346,7 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">10468</span>
+                            <span class="count" id='salesCount'></span>
                         </h4>
                         <p class="text-light">Sales</p>
 
@@ -464,22 +474,31 @@
                     <strong class="card-title text-light">Conversion Funnel</strong>
                 </div>
                 <div id="funnel" style="height: 30vh;"></div>
-                  <!-- <div class="Vector-map-js">
-                      <div id="vmap" class="vmap" style="height: 265px;"></div>
-                  </div> -->
               </div>
               <!-- /# card -->
-          </div>
-          <!-- <div class="col-md-5">
               <div class="card">
                   <div class="card-header bg-success">
                       <strong class="card-title text-light">Retail Store Analysis</strong>
                   </div>
-                  <div class="card-body">
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="weather-category twt-category">
+                      <ul>
+                          <li class="active">
+                              Window Conversion
+                              <h3>3.2%</h3>
+
+                          </li>
+                          <li>
+                              Cross Shoppers
+                              <h3>4.1%</h3>
+                          </li>
+                          <li>
+                              Engaged Shoppers
+                              <h3>52%</h3>
+                          </li>
+                      </ul>
                   </div>
               </div>
-          </div> -->
+          </div>
 
           </div>
 
@@ -902,7 +921,8 @@
     <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
     <script src="assets/js/dashboard.js"></script>
     <!-- <script src="assets/js/widgets.js"></script> -->
-    <script src="assets/js/linewidgets.js"></script>
+    <!-- <script src="assets/js/linewidgets.js"></script> -->
+
     <script src="assets/js/lib/vector-map/jquery.vmap.js"></script>
     <script src="assets/js/lib/vector-map/jquery.vmap.min.js"></script>
     <script src="assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
@@ -913,6 +933,7 @@
     <script src="https://code.highcharts.com/modules/funnel.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
+    <script src="assets/js/overviewLineChart.js"></script>
     <script src="assets/js/funnel.js"></script>
     <script src="assets/js/top3Product.js"></script>
     <script src="assets/js/categoryRevenue.js"></script>
@@ -937,6 +958,7 @@
     </script> -->
     <script type="text/javascript">
     $(document).ready(function() {
+      //$('#sidebar-left').load('sidebar-left.html');
       //getPieData();
     });
     </script>

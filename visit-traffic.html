@@ -275,7 +275,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Persona & Revenue</h1>
+                        <h1>Visit Traffic</h1>
                     </div>
                 </div>
             </div>
@@ -283,52 +283,85 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li class="active">Persona & Revenue</li>
+                            <li class="active">Visit Traffic</li>
                         </ol>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header bg-success">
-                    <strong class="card-title text-light">Age</strong>
+                    <strong class="card-title text-light">Traffic and Conversion Rate</strong>
                 </div>
-                <div id="age" ></div>
-                <!-- <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div> -->
-            </div>
-        </div>
-        <div class="col-md-7">
-            <div class="card">
-                <div class="card-header bg-success">
-                    <strong class="card-title text-light">Units sold by Age</strong>
-                </div>
-                <div id="soldAge"></div>
+                <div id="customerAmount"></div>
                 <!-- <div class="card-body">
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div> -->
             </div>
         </div>
 
-          <div class="col-md-7">
+          <div class="col-md-5">
               <div class="card">
                   <div class="card-header bg-success">
-                      <strong class="card-title text-light">Top 3 Product Categories by Revenue and Age</strong>
+                      <strong class="card-title text-light">Retail Store Analysis</strong>
                   </div>
-                  <div id="top3" ></div>
+                      <div class="weather-category twt-category">
+                          <ul>
+                              <li class="active">
+                                  Window Conversion
+                                  <div>
+                                    <img src="images/sketch-icon/time.png" alt="Logo">
+                                  </div>
+                                  <h3>3.2%</h3>
+
+                              </li>
+                              <li>
+                                  Cross Shoppers
+                                  <div>
+                                    <img src="images/sketch-icon/shop2shop.png" alt="Logo">
+                                  </div>
+                                  <h3>4.1%</h3>
+                              </li>
+                              <li>
+                                  Engaged Shoppers
+                                  <div>
+                                    <img src="images/sketch-icon/service.png" alt="Logo">
+                                  </div>
+                                  <h3>52%</h3>
+                              </li>
+                          </ul>
+                      </div>
                   <!-- <div class="card-body">
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div> -->
               </div>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-7">
               <div class="card">
                   <div class="card-header bg-success">
-                      <strong class="card-title text-light">Revenue by Product Category</strong>
+                      <strong class="card-title text-light">Customer Analysis</strong>
                   </div>
-                  <div id="categoryRevenue"></div>
+                      <div class="weather-category twt-category">
+                          <ul>
+                              <li class="active">
+                                  Window Conversion
+                                  <div>
+                                    <img src="images/sketch-icon/repurchase.png" alt="Logo">
+                                  </div>
+                                  <h3>3.2%</h3>
+
+                              </li>
+                              <li>
+                                  Cross Shoppers
+                                  <div>
+                                    <img src="images/sketch-icon/device.png" alt="Logo">
+                                  </div>
+                                  <h3>4.1%</h3>
+                              </li>
+                              
+                          </ul>
+                      </div>
                   <!-- <div class="card-body">
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div> -->
@@ -349,29 +382,7 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="assets/js/age.js"></script>
-    <script src="assets/js/unitSoldAge.js"></script>
-    <script src="assets/js/top3Product.js"></script>
-    <script src="assets/js/categoryRevenue.js"></script>
-
-    <!-- <script>
-        ( function ( $ ) {
-            "use strict";
-
-            jQuery( '#vmap' ).vectorMap( {
-                map: 'world_en',
-                backgroundColor: null,
-                color: '#ffffff',
-                hoverOpacity: 0.7,
-                selectedColor: '#1de9b6',
-                enableZoom: true,
-                showTooltip: true,
-                values: sample_data,
-                scaleColors: [ '#1de9b6', '#03a9f5' ],
-                normalizeFunction: 'polynomial'
-            } );
-        } )( jQuery );
-    </script> -->
+    <script src="assets/js/customerLineChart.js"></script>
 
 </body>
 </html>
