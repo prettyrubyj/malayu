@@ -42,7 +42,6 @@ $.ajax({
         //轉換百分比為正負值，用百分比減100可得當日比昨日上升或減少，取到小數第二位
         percentOri=result[0].percentage.split("%",1);
         percentNew=((percentOri-100).toFixed(2)).toString()+"%";
-        console.log(percentNew);
         document.getElementById('salesPersent').innerHTML=percentNew;
         drawSales(salesDate,salesData);
   		},
