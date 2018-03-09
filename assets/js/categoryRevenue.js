@@ -1,7 +1,7 @@
 // Build the chart
 var alldata;
 $.ajax({
-	    url: 'http://api.awsfox.com/trans',
+	    url: 'https://api.awsfox.com/trans',
 	    global: false,
 	    cache: false,
 	    type: "get",

@@ -2,7 +2,7 @@
 var allData;
 var ageRange;
 $.ajax({
-	    url: 'http://api.awsfox.com/users/analysis',
+	    url: 'https://api.awsfox.com/users/analysis',
 	    global: false,
 	    cache: false,
 	    type: "get",

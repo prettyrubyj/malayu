@@ -4,13 +4,14 @@ var trafficDate;
 
 //取traffic 資料
 $.ajax({
-	    url: 'http://api.awsfox.com/dailySales/7',
+	    url: "https://api.awsfox.com/dailySales/7",
 	    global: false,
 	    cache: false,
 	    type: "get",
 	    contentType: 'application/json',
-		  dataType: "json",
+		  //dataType: "jsonp",
 		success: function(rs) {
+			console.log(rs);
 			var result = rs;
       trafficDate=result[0].date;
       trafficData=result[0].data;
@@ -28,7 +29,7 @@ $.ajax({
 
 //取sales 資料
   $.ajax({
-  	    url: 'http://api.awsfox.com/dailyCustomer/7',
+  	    url: 'https://api.awsfox.com/dailyCustomer/7',
   	    global: false,
   	    cache: false,
   	    type: "get",

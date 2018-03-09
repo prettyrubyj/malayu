@@ -1,7 +1,7 @@
 var allData;
 var ageRange;
 $.ajax({
-	    url: 'http://api.awsfox.com/revenueCategory/3',
+	    url: 'https://api.awsfox.com/revenueCategory/3',
 	    global: false,
 	    cache: false,
 	    type: "get",
